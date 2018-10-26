@@ -165,7 +165,7 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <h3 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h3><p>概述：promise在异步执行的流程中，把执行代码和处理结果的代码分离了</p>
-<h4 id="简单的promise例子："><a href="#简单的promise例子：" class="headerlink" title="简单的promise例子："></a>简单的promise例子：</h4><p>var pfn = function  (b){<br>            return new Promise(function(resolve,reject){<br>                if(b&gt;3){<br>                    resolve(‘大于3’)<br>                }else{<br>                    reject(‘小于3’)<br>                }<br>            })<br>        }</p>
+<h4 id="简单的promise例子："><a href="#简单的promise例子：" class="headerlink" title="简单的promise例子："></a>简单的promise例子：</h4><p>  var pfn = function  (b){<br>            return new Promise(function(resolve,reject){<br>                if(b&gt;3){<br>                    resolve(‘大于3’)<br>                }else{<br>                    reject(‘小于3’)<br>                }<br>            })<br>        }</p>
 <pre><code>pfn(5).then(function(){
     console.log(&apos;成功&apos;)
 }).catch(function(){
