@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        查漏补缺 2018/10/22-2018/10/28｜undefined
+        
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2018/10/25/查漏补缺 18.10.22-18.10.28/">
+    <link rel="canonical" href="http://yoursite.com/archives/2018/11/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="false" data-istags="false
 " data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -116,126 +116,111 @@
 
 <!-- Main Content -->
 
-<!--only post-->
 
-
-<img class="wechat-title-img" src="">
-
-
-<style>
-    
-    header.intro-header {
-        background-image: url('')
-    }
-
-    
-</style>
-
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <div class="post-heading">
-                    <h1>查漏补缺 2018/10/22-2018/10/28</h1>
-                    
-                    <span class="meta">
-                         作者 ZouTing
-                        <span>
-                          日期 2018-10-25
-                         </span>
-                    </span>
-                    <div class="tags text-center">
-                        
+<!-- Page Header -->
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
+    <div class="row">
+        <header class="intro-header">
+            <div class="container">
+                <div class="site-heading text-center">
+                    <div class="about-me">
+                        <!--移动端头部显示-->
+                        <img src="">
+                        <h5><a href="/about/">ZouTing</a></h5>
+                        <p></p>
                     </div>
                 </div>
             </div>
+        </header>
+    </div>
+</div>
+<!-- Main Content -->
+<div class="container custom-haojen-container">
+    <!-- Post Container -->
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
+            <!-- Main Content -->
+
+
+
+<div class="post-preview " style="background-image: url('')">
+    <a href="/2018/11/16/查漏补缺18.11.11-18.11.16/">
+        <h2 class="post-title">
+            查漏补缺18.11.11-18.11.16
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-16
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                1、去掉小程序button控件灰色边框button::after {
+  border: 0;
+} 
+2、 vue中:class的几种使用方式a、有多个动态class :class=&quot;[item.icon,{active:selected==index}]&quot;
+b、:class..
+            </p>
         </div>
-    </div>
-    <div class="post-title-haojen">
-        <span>
-            查漏补缺 2018/10/22-2018/10/28
-        </span>
-    </div>
-</header>
+    </a>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <!-- Post Container -->
-            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h3 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h3><p>概述：promise在异步执行的流程中，把执行代码和处理结果的代码分离了</p>
-<h4 id="简单的promise例子："><a href="#简单的promise例子：" class="headerlink" title="简单的promise例子："></a>简单的promise例子：</h4><p>  var pfn = function  (b){<br>            return new Promise(function(resolve,reject){<br>                if(b&gt;3){<br>                    resolve(‘大于3’)<br>                }else{<br>                    reject(‘小于3’)<br>                }<br>            })<br>        }</p>
-<pre><code>pfn(5).then(function(){
-    console.log(&apos;成功&apos;)
-}).catch(function(){
-    console.log(&apos;失败&apos;)
-})
-</code></pre><h4 id="先做任务1，任务1成功之后再执行任务2"><a href="#先做任务1，任务1成功之后再执行任务2" class="headerlink" title="先做任务1，任务1成功之后再执行任务2"></a>先做任务1，任务1成功之后再执行任务2</h4><p>job1.then(job2).then(job3).catch(handleError);</p>
-<h4 id="任务并发执行："><a href="#任务并发执行：" class="headerlink" title="任务并发执行："></a>任务并发执行：</h4><p>promise.all([p1,p2]).then(function(resolve){<br>})</p>
-<h4 id="谁先成功使用谁"><a href="#谁先成功使用谁" class="headerlink" title="谁先成功使用谁"></a>谁先成功使用谁</h4><p>Promise.race()</p>
-<p>学习链接：<a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000</a></p>
-<h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h3><p>概述：方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象，它将返回目标对象。</p>
+</div>
 
-                <hr>
-                
+<hr>
 
-                <ul class="pager">
+
+
+
+<!-- 翻页 pager -->
+
+<ul class="pager">
+    
+    
+</ul>
+
+
+        </div>
+        <!-- Sidebar Container -->
+        <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+
+            <!-- About Me -->
+            <section class="visible-md visible-lg" style="padding: 0 18px">
+                <div class="short-about">
+                    <!--侧边栏头像-->
                     
-                    <li class="previous">
-                        <a href="/2018/10/29/查漏补缺18-10-29-18-11-4/" data-toggle="tooltip" data-placement="top" title="查漏补缺18.10.29-18.11.4">&larr; Previous Post</a>
-                    </li>
+                    <h5><a href="/about/">ZouTing</a></h5>
                     
-                    
-                    <li class="next">
-                        <a href="/2018/10/24/hello-world/" data-toggle="tooltip" data-placement="top" title="Hello Hexo">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul>
+                    <hr>
+                    <!-- SNS Link 社交 -->
+                    <ul class="list-inline">
+                        
+                        
+                        
 
-                
+                        
 
-                
+                        
 
+                        
 
-                <!--加入新的评论系统-->
-                
-
-                
-
-            </div>
-
-            <div class="hidden-xs col-sm-3 toc-col">
-                <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#promise"><span class="toc-text">promise</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简单的promise例子："><span class="toc-text">简单的promise例子：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#先做任务1，任务1成功之后再执行任务2"><span class="toc-text">先做任务1，任务1成功之后再执行任务2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#任务并发执行："><span class="toc-text">任务并发执行：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#谁先成功使用谁"><span class="toc-text">谁先成功使用谁</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-assign"><span class="toc-text">Object.assign()</span></a></li></ol>
+                        
+                    </ul>
                 </div>
-            </div>
+            </section>
+
+            <!-- Featured Tags  标签 -->
+            
+
+            
+
         </div>
-
-        <div class="row">
-            <!-- Sidebar Container -->
-
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                
-
-                <!-- Friends Blog -->
-                
-            </div>
-        </div>
-
     </div>
-</article>
-
-
-
-
-
-
+</div>
 
 <!-- Footer -->
 <!-- Footer -->

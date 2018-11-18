@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        
+        查漏补缺 2018/10/22-2018/10/28｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/archives/2018/10/">
+    <link rel="canonical" href="http://yoursite.com/2018/10/25/查漏补缺18.10.22-18.10.28/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="false" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
 " data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -116,158 +116,140 @@
 
 <!-- Main Content -->
 
+<!--only post-->
 
-<!-- Page Header -->
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
-    <div class="row">
-        <header class="intro-header">
-            <div class="container">
-                <div class="site-heading text-center">
-                    <div class="about-me">
-                        <!--移动端头部显示-->
-                        <img src="">
-                        <h5><a href="/about/">ZouTing</a></h5>
-                        <p></p>
+
+<img class="wechat-title-img" src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>查漏补缺 2018/10/22-2018/10/28</h1>
+                    
+                    <span class="meta">
+                         作者 ZouTing
+                        <span>
+                          日期 2018-10-25
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
                     </div>
                 </div>
             </div>
-        </header>
-    </div>
-</div>
-<!-- Main Content -->
-<div class="container custom-haojen-container">
-    <!-- Post Container -->
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-            <!-- Main Content -->
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/10/29/查漏补缺18.10.29-18.11.4/">
-        <h2 class="post-title">
-            查漏补缺18.10.29-18.11.4
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-10-29
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                1、window SourceTree 免登录原文：https://blog.csdn.net/chenqiai0/article/details/83472410 
-
-我从官网上下载了信息的3.0.8版本，注册的时候发现需要进行注册。由于没有账号，于是在Google搜索跳过登陆，
-但是一直没有..
-            </p>
         </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/10/25/查漏补缺18.10.22-18.10.28/">
-        <h2 class="post-title">
+    </div>
+    <div class="post-title-haojen">
+        <span>
             查漏补缺 2018/10/22-2018/10/28
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-10-25
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                1、promise概述：promise在异步执行的流程中，把执行代码和处理结果的代码分离了
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h3 id="1、promise"><a href="#1、promise" class="headerlink" title="1、promise"></a>1、promise</h3><pre><code>概述：promise在异步执行的流程中，把执行代码和处理结果的代码分离了
  简单的promise例子：
 var pfn = function  (b){
         return new Promise(function(resolve,reject){
-         ..
-            </p>
-        </div>
-    </a>
+            if(b&gt;3){
+                resolve(&apos;大于3&apos;)
+            }else{
+                reject(&apos;小于3&apos;)
+            }    
+        })
+    }
+    pfn(5).then(function(){
+        console.log(&apos;成功&apos;)
+    }).catch(function(){
+        console.log(&apos;失败&apos;)
+    })
+先做任务1，任务1成功之后再执行任务2
+job1.then(job2).then(job3).catch(handleError);
+任务并发执行：
+promise.all([p1,p2]).then(function(resolve){
+})
+谁先成功使用谁:
+Promise.race()
 
-</div>
+原文：https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000
+</code></pre><h3 id="2、Object-assign"><a href="#2、Object-assign" class="headerlink" title="2、Object.assign()"></a>2、Object.assign()</h3><pre><code>概述：方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象，它将返回目标对象。
+</code></pre>
+                <hr>
+                
 
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/10/24/hello-hexo/">
-        <h2 class="post-title">
-            Hello Hexo
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-10-24
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer i..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-
-<!-- 翻页 pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
-
-        </div>
-        <!-- Sidebar Container -->
-        <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-
-            <!-- About Me -->
-            <section class="visible-md visible-lg" style="padding: 0 18px">
-                <div class="short-about">
-                    <!--侧边栏头像-->
+                <ul class="pager">
                     
-                    <h5><a href="/about/">ZouTing</a></h5>
+                    <li class="previous">
+                        <a href="/2018/10/29/查漏补缺18.10.29-18.11.4/" data-toggle="tooltip" data-placement="top" title="查漏补缺18.10.29-18.11.4">&larr; Previous Post</a>
+                    </li>
                     
-                    <hr>
-                    <!-- SNS Link 社交 -->
-                    <ul class="list-inline">
-                        
-                        
-                        
+                    
+                    <li class="next">
+                        <a href="/2018/10/24/hello-hexo/" data-toggle="tooltip" data-placement="top" title="Hello Hexo">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
 
-                        
+                
 
-                        
+                
 
-                        
 
-                        
-                    </ul>
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、promise"><span class="toc-text">1、promise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、Object-assign"><span class="toc-text">2、Object.assign()</span></a></li></ol>
                 </div>
-            </section>
-
-            <!-- Featured Tags  标签 -->
-            
-
-            
-
+            </div>
         </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
     </div>
-</div>
+</article>
+
+
+
+
+
+
 
 <!-- Footer -->
 <!-- Footer -->
