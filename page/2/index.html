@@ -22,7 +22,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/archives/">
+    <link rel="canonical" href="http://yoursite.com/page/2/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -44,7 +44,7 @@
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="false" data-istags="false
-" data-ishome="false">
+" data-ishome="true">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -125,6 +125,126 @@
 <!-- Main Content -->
 
 
+<style>
+
+    .custom-haojen-container .post-preview:nth-of-type(1),
+    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
+        text-align: center;
+        background-repeat: no-repeat;
+        border-radius: 3px;
+        background-size: cover;
+        padding: 0;
+        height: 300px;
+        display: table;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.16);
+    }
+
+    /*去掉诗歌的背景图片*/
+    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
+        background-image: none !important;
+        background-color: rgba(255, 248, 220, 0.5);
+    }
+
+    .custom-haojen-container .post-preview:nth-child(1) h2,
+    .custom-haojen-container .post-preview:nth-child(1) .post-meta,
+    .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
+        text-shadow: 0 0 40px rgba(0, 0, 0, 1);
+        letter-spacing: 1px;
+        color: #fff;
+        margin-top: 0;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .custom-haojen-container .post-preview:nth-child(1) .post-meta {
+        font-size: .9em;
+        font-weight: 300;
+        margin-top: 0;
+    }
+
+    .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle {
+        letter-spacing: 6px;
+        font-size: 18px;
+        font-family: unset;
+        font-weight: 400;
+        color: rgba(0, 0, 0, .75)
+    }
+
+    /*不显示摘要*/
+    .custom-haojen-container .post-preview:nth-child(1) .post-content-preview {
+        display: none
+    }
+
+    /*只第一个显示背景图片*/
+    .custom-haojen-container .post-preview:not(:nth-child(1)) {
+        background-image: none !important;
+    }
+
+    /*第一个分界线去掉*/
+    .custom-haojen-container hr:nth-of-type(1) {
+        display: none;
+    }
+
+    /*主题*/
+    .custom-haojen-container .post-preview:nth-of-type(1) > a {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    /*诗词标题*/
+    .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
+        font-size: 35px;
+        font-family: STKaiti;
+        color: rgba(0, 0, 0, .8);
+    }
+
+    .custom-haojen-container .post-preview-poetry:nth-of-type(1) .post-meta {
+        color: #0e2231;
+    }
+
+    @media (max-width: 768px) {
+        .custom-haojen-container .post-preview:nth-child(1) {
+            height: 240px;
+        }
+
+        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
+            font-size: 28px !important;
+            margin-top: 0;
+        }
+
+        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .custom-haojen-container .post-preview:nth-of-type(1) > a {
+            padding: 20px
+        }
+    }
+
+    /*手机屏幕*/
+    @media (max-width: 400px) {
+        .custom-haojen-container .post-preview:nth-child(1) {
+            height: 195px;
+        }
+
+        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
+            font-size: 20px !important;
+        }
+
+        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
+            font-size: 16px;
+        }
+
+        .custom-haojen-container .post-preview:nth-child(1) a {
+            padding: 30px 20px;
+        }
+    }
+</style>
+
 <!-- Page Header -->
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
     <div class="row">
@@ -152,21 +272,20 @@
 
 
 <div class="post-preview " style="background-image: url('')">
-    <a href="/2018/12/11/面向对象的Javascript笔记/">
+    <a href="/2018/10/29/查漏补缺18.10.29-18.11.4/">
         <h2 class="post-title">
-            面向对象的Javascript
+            查漏补缺18.10.29-18.11.4
         </h2>
         <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-11
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-10-29
         </p>
         
         <div class="post-content-preview">
             <p>
-                ###面试题：
-
-
-1234567var a = 123;function f()&#123;  alert(a); //undefined  var a = 1;  alert(a) //1&#125;f()
-  解说：这是因为函数域始终优先于全局域，所以局部变量会覆盖掉所有与它同名的全局变量..
+                1、微信小程序：在微信开发工具上能打开，在手机上预览，出现fail url not in domain list。
+因为开发工具上勾上了不校验请求地址，所以没问题,
+配置合法请求域名
+2、ParentController as pc 中 as  pc和cc可以认为分别是ParentControl..
             </p>
         </div>
     </a>
@@ -178,18 +297,21 @@
 
 
 <div class="post-preview " style="background-image: url('')">
-    <a href="/2018/12/06/cnzz统计原理解析/">
+    <a href="/2018/10/25/查漏补缺18.10.22-18.10.28/">
         <h2 class="post-title">
-            cnzz统计原理解析
+            查漏补缺 2018/10/22-2018/10/28
         </h2>
         <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-06
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-10-25
         </p>
         
         <div class="post-content-preview">
             <p>
-                cnzz统计原理解析：原文：https://blog.csdn.net/laozhaokun/article/details/38612067?utm_source=tuicool&amp;utm_medium=referral
-
+                1、promise概述：promise在异步执行的流程中，把执行代码和处理结果的代码分离了
+ 简单的promise例子：
+var pfn = function  (b){
+        return new Promise(function(resolve,reject){
+         ..
             </p>
         </div>
     </a>
@@ -201,182 +323,17 @@
 
 
 <div class="post-preview " style="background-image: url('')">
-    <a href="/2018/11/30/图片裁剪/">
+    <a href="/2018/10/24/hello-hexo/">
         <h2 class="post-title">
-            图片裁剪
+            Hello Hexo
         </h2>
         <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-30
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-10-24
         </p>
         
         <div class="post-content-preview">
             <p>
-                cropper 裁剪图片可以裁剪二进制流的格式
-应该是涉及到跨域的问题，还没想好怎么解决
-
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/11/30/vue和angular防抖/">
-        <h2 class="post-title">
-            vue和angular防抖
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-30
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                1、vue防抖1、公用js文件：
-1234567891011export function debounce (func, delay) &#123;  let timer  return function (...args) &#123;    if (timer) &#123;      c..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/11/30/获取url中？符后的字串/">
-        <h2 class="post-title">
-            获取url中？符后的字串
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-30
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                获取url中”?”符后的字串方法1:substr截取123456789101112131415161718192021&lt;html&gt;  &lt;head&gt;    &lt;title&gt;&lt;/title&gt;  &lt;/head&gt;  &lt;body&gt;&lt..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/11/29/vue全选/">
-        <h2 class="post-title">
-            vue全选
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-29
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                vue单选和全选123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657&lt;html&gt;  &lt;head&gt;    &lt;t..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/11/18/react-native/">
-        <h2 class="post-title">
-            react-native
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-18
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                1、在电脑上能模拟器能打开程序，在真机上打开报错《 No bundle URL present.
-Make sure you&apos;re running a packager server or have included a .jsbundle file in your applicati..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/11/18/跟着木易杨进阶/">
-        <h2 class="post-title">
-            跟着木易杨学习高级前端
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-18
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                我的阅读笔记1-1、理解JS中的执行上下文和执行栈：原文地址：https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2Fyued-fe%2Fy-translation%2Fblob%2Fmaster%2Fen%2Funderstandin..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/11/18/前端工具遇到的问题/">
-        <h2 class="post-title">
-            前端工具遇到的问题
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-18
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                1、window SourceTree 免登录原文：https://blog.csdn.net/chenqiai0/article/details/83472410 
-
-我从官网上下载了信息的3.0.8版本，注册的时候发现需要进行注册。由于没有账号，于是在Google搜索跳过登陆，
-但是一直没有..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/11/16/查漏补缺18.11.11-18.11.16/">
-        <h2 class="post-title">
-            查漏补缺18.11.11-18.11.16
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-16
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                1、去掉小程序button控件灰色边框button::after {
-  border: 0;
-} 
-2、 vue中:class的几种使用方式a、有多个动态class :class=&quot;[item.icon,{active:selected==index}]&quot;
-b、:class..
+                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer i..
             </p>
         </div>
     </a>
@@ -392,10 +349,10 @@ b、:class..
 
 <ul class="pager">
     
-    
-    <li class="next">
-        <a href="/archives/page/2/">Older Posts &rarr;</a>
+    <li class="previous">
+        <a href="/">&larr; Newer Posts</a>
     </li>
+    
     
 </ul>
 

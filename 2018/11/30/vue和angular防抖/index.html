@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        react-native｜undefined
+        vue和angular防抖｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2018/11/18/react-native/">
+    <link rel="canonical" href="http://yoursite.com/2018/11/30/vue和angular防抖/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -144,15 +144,17 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>react-native</h1>
+                    <h1>vue和angular防抖</h1>
                     
                     <span class="meta">
                          作者 ZouTing
                         <span>
-                          日期 2018-11-18
+                          日期 2018-11-30
                          </span>
                     </span>
                     <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#vue angular" title="vue angular">vue angular</a>
                         
                     </div>
                 </div>
@@ -161,7 +163,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            react-native
+            vue和angular防抖
         </span>
     </div>
 </header>
@@ -172,29 +174,26 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h3 id="1、在电脑上能模拟器能打开程序，在真机上打开报错"><a href="#1、在电脑上能模拟器能打开程序，在真机上打开报错" class="headerlink" title="1、在电脑上能模拟器能打开程序，在真机上打开报错"></a>1、在电脑上能模拟器能打开程序，在真机上打开报错</h3><pre><code>《 No bundle URL present.
-Make sure you&apos;re running a packager server or have included a .jsbundle file in your application bundle. 》？
-进入Xcode--&gt;Product--&gt;Scheme--&gt;Edit Scheme --&gt;Run--&gt;Build Configuration--&gt;Debug  设置成Release即可
-选成release 可以打开，但是不是最新的样式  选择debug不能打开，是最新的样式
-原因：debug模式只可以在模拟器下使用，要在真机上测试必须使用release模式。生成最新样式，需要执行：
-npm run bundle-ios
-</code></pre><h3 id="2、-1-library-not-found-for-lRCTVideo"><a href="#2、-1-library-not-found-for-lRCTVideo" class="headerlink" title="2、:-1: library not found for -lRCTVideo"></a>2、:-1: library not found for -lRCTVideo</h3><pre><code>跟video有关系，video是0.0.9版本时不行，改为1.0.0版本，就可以了  
-</code></pre><h3 id="3、Xcode报错"><a href="#3、Xcode报错" class="headerlink" title="3、Xcode报错"></a>3、Xcode报错</h3><pre><code>Xcode报错误信息：No account for team &quot;HQNWRDCGWX&quot;. Add a new account in the Accounts preference pane or verify that your accounts have valid credentials. (in target &apos;eschool_physiqueTests&apos;)
-原因：项目中的teamID未修改。
-解决方法：搜索 HQNWRDCGWX 并修改为自己的ID
-</code></pre>
+                <h3 id="1、vue防抖"><a href="#1、vue防抖" class="headerlink" title="1、vue防抖"></a>1、vue防抖</h3><pre><code>1、公用js文件：
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> debounce (func, delay) &#123;</span><br><span class="line">  <span class="built_in">let</span> timer</span><br><span class="line">  <span class="built_in">return</span> <span class="keyword">function</span> (...args) &#123;</span><br><span class="line">    <span class="keyword">if</span> (timer) &#123;</span><br><span class="line">      clearTimeout(timer)</span><br><span class="line">    &#125;</span><br><span class="line">    timer = setTimeout(() =&gt; &#123;</span><br><span class="line">      func.apply(this, args)</span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+2、在需要用的vue组件里引入 import {debounce} from &apos;@/utils/index.js&apos;  
+
+3、在created调用：
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="variable">$watch</span>(<span class="string">'searchText'</span>, debounce((newSearchText) =&gt; &#123;</span><br><span class="line">    //axios请求</span><br><span class="line">&#125;, 500))</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="2、angular防抖"><a href="#2、angular防抖" class="headerlink" title="2、angular防抖"></a>2、angular防抖</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var timeout;</span><br><span class="line"><span class="variable">$scope</span>.<span class="variable">$watch</span>(<span class="string">'searchText'</span>, <span class="keyword">function</span> (newSearchText) &#123;</span><br><span class="line">    <span class="keyword">if</span> (newSearchText) &#123;</span><br><span class="line">        <span class="keyword">if</span> (timeout) &#123;</span><br><span class="line">            <span class="variable">$timeout</span>.cancel(timeout);</span><br><span class="line">        &#125;</span><br><span class="line">        timeout = <span class="variable">$timeout</span>(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$scope</span>.searchText.length &gt; 0) &#123;</span><br><span class="line">                // http 请求</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, 600)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
                 <hr>
                 
 
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2018/11/29/vue全选/" data-toggle="tooltip" data-placement="top" title="vue全选">&larr; Previous Post</a>
+                        <a href="/2018/11/30/图片裁剪/" data-toggle="tooltip" data-placement="top" title="图片裁剪">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2018/11/18/跟着木易杨进阶/" data-toggle="tooltip" data-placement="top" title="跟着木易杨学习高级前端">Next Post &rarr;</a>
+                        <a href="/2018/11/30/获取url中？符后的字串/" data-toggle="tooltip" data-placement="top" title="获取url中？符后的字串">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -213,7 +212,7 @@ npm run bundle-ios
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、在电脑上能模拟器能打开程序，在真机上打开报错"><span class="toc-text">1、在电脑上能模拟器能打开程序，在真机上打开报错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、-1-library-not-found-for-lRCTVideo"><span class="toc-text">2、:-1: library not found for -lRCTVideo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Xcode报错"><span class="toc-text">3、Xcode报错</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、vue防抖"><span class="toc-text">1、vue防抖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、angular防抖"><span class="toc-text">2、angular防抖</span></a></li></ol>
                 </div>
             </div>
         </div>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="ZouTing" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        面向对象的Javascript｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2018/12/11/面向对象的Javascript笔记/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    ZouTing
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img" src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>面向对象的Javascript</h1>
+                    
+                    <span class="meta">
+                         作者 ZouTing
+                        <span>
+                          日期 2018-12-11
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#Javascript" title="Javascript">Javascript</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            面向对象的Javascript
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>###面试题：</p>
+<blockquote>
+</blockquote>
+<pre><code><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = 123;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f</span></span>()&#123;</span><br><span class="line">  alert(a); //undefined</span><br><span class="line">  var a = 1;</span><br><span class="line">  alert(a) //1</span><br><span class="line">&#125;</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+</code></pre><p>  解说：这是因为函数域始终优先于全局域，所以局部变量会覆盖掉所有与它同名的全局变量。<br>  变量提升：被提升的只有变量的声明，而与之相关的赋值操作并不会被提升。</p>
+<blockquote>
+<p>2、函数也是数据<br>    命名函数表达式与函数声明没有什么区别：<br>    表现于它们所在的上下文，函数声明只会出现在程序代码里，<br>    如何像变量那样使用函数，，也就是说，我们可以将它拷贝给不同的变量。<br>    var sum = function(a,b){<br>      return a+b;<br>    }<br>    var add = sum<br>    typeof add; // function<br>    add(1,2)<br>    3<br>  3.4.1、匿名函数：<br>  匿名函数：特别是当它不被赋值给变量单独使用的时候，在这种情况下，此类函数有2种优雅的用法：<br>  您可以将匿名函数作为参数传递给其他函数，这样，接受方函数就能利用我们所传递的函数来完成某些事情<br>  您可以定义某个匿名函数来执行 某些一次性任务<br>  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> invokeAdd(a,b)&#123;</span><br><span class="line">  <span class="built_in">return</span> a()+b();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># function one()&#123;</span></span><br><span class="line"><span class="comment">#   return 1</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br><span class="line"><span class="comment"># function two()&#123;</span></span><br><span class="line"><span class="comment">#   return 2</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br><span class="line">invokeAdd(one,two)</span><br><span class="line"></span><br><span class="line">invokeAdd(<span class="function"><span class="title">function</span></span>()&#123;<span class="built_in">return</span> 1&#125;,<span class="function"><span class="title">function</span></span>()&#123;<span class="built_in">return</span> 2&#125;)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<pre><code>回调函数：(书写一个示例)
+即时函数：(function(){alert(33)})()
+内部（私有）函数：
+返回函数的函数：
+能重写自己的函数：组合型的应用示例：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var a = (function()&#123;</span><br><span class="line">  function someSetup ()&#123;</span><br><span class="line">    var setup = &apos;done&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">  function actialWork()&#123;</span><br><span class="line">    alert(&apos;Worky-worky&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">  someSetup()</span><br><span class="line">  return actualWork;</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
+
+利用闭包冲破作用域链：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var a = &apos;global variable&apos;</span><br><span class="line">var F = function ()&#123;</span><br><span class="line">  var b = &apos;local variable&apos;;</span><br><span class="line">  var N = function ()&#123;</span><br><span class="line">    var c = &apos;inner local&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">全局作用域：</span><br><span class="line"></span><br><span class="line">闭包，突破作用域链</span><br><span class="line">如何突破：1、将它升级为全局变量，或通过F返回给全局空间即可。</span><br></pre></td></tr></table></figure>
+
+闭包#1
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;global variable&quot;</span><br><span class="line">var F = function()&#123;</span><br><span class="line">  var b = &quot;local variable&quot;</span><br><span class="line">  var N = function()&#123;</span><br><span class="line">    var c = &quot;inner local&quot;</span><br><span class="line">    return b</span><br><span class="line">  &#125;</span><br><span class="line">  return N;</span><br><span class="line">&#125;</span><br><span class="line">var inner = F();</span><br><span class="line">inner()</span><br></pre></td></tr></table></figure>
+
+闭包#2
+  在这里F()不再返回函数了，而是直接在函数体内创建一个新的全局函数inner()
+  首先需要声明一个全局函数的占位符，尽管这个占位符不是必须的，
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var inner;</span><br><span class="line">var F = function ()&#123;</span><br><span class="line">  var b =&quot;local variable&quot;;</span><br><span class="line">  var N = function()&#123;</span><br><span class="line">    return b;</span><br><span class="line">  &#125;</span><br><span class="line">  inner = N</span><br><span class="line">&#125;</span><br><span class="line">F() // 书上写的是 local variable ,但是打印出来的是undefined</span><br></pre></td></tr></table></figure>
+
+闭包#3
+  事实上，每个函数都可以被认为是一个闭包，因为每个函数都在其所在域（即该函数的作用域）中维护了某种私有联系
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function F(param)&#123;</span><br><span class="line">  var N = function()&#123;</span><br><span class="line">    return param;</span><br><span class="line">  &#125;</span><br><span class="line">  param++</span><br><span class="line">  return N;</span><br><span class="line">&#125;</span><br><span class="line">var inner = F(123)</span><br><span class="line">inner()</span><br></pre></td></tr></table></figure>
+
+ 由此看出，函数所绑定的是作用域本身，而不是在函数定义时该作用域中的变量或变量当前所返回的值
+闭包#4 循环中的闭包
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function F()&#123;</span><br><span class="line">  var arr = [],i;</span><br><span class="line">  for(i=0;i&lt;3;i++)&#123;</span><br><span class="line">    arr[i] = function()&#123;</span><br><span class="line">      console.log(i)</span><br><span class="line">      return i;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(arr)</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line">var arr = F()</span><br><span class="line">console.log(arr[0]()) //3</span><br><span class="line">console.log(arr[1]()) //3</span><br><span class="line">console.log(arr[2]()) //3</span><br></pre></td></tr></table></figure>
+
+原因： 还是不明白为什么会是3个 3 
+  我们在这里创建了3个闭包，而他们都指向了一个共同的局部变量i，但是闭包并不会记录他们的值
+  他们所拥有的只是相关域在创建时的一个连接（即引用）在这个例子中，变量i恰巧存在于定义这
+  3个函数域中，对这3个函数中的任何一个而言，当它要去获取某个变量时，它会从其所在的域开始
+  逐级寻找那个距离最近的i。由于循环结束时i的值为3，所以这3个函数都指向了这一共同值
+
+#闭包5 getter setter
+</code></pre>
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/12/06/cnzz统计原理解析/" data-toggle="tooltip" data-placement="top" title="cnzz统计原理解析">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; ZouTing 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>

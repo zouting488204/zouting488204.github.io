@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        react-native｜undefined
+        图片裁剪｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2018/11/18/react-native/">
+    <link rel="canonical" href="http://yoursite.com/2018/11/30/图片裁剪/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -144,15 +144,17 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>react-native</h1>
+                    <h1>图片裁剪</h1>
                     
                     <span class="meta">
                          作者 ZouTing
                         <span>
-                          日期 2018-11-18
+                          日期 2018-11-30
                          </span>
                     </span>
                     <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#图片裁剪" title="图片裁剪">图片裁剪</a>
                         
                     </div>
                 </div>
@@ -161,7 +163,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            react-native
+            图片裁剪
         </span>
     </div>
 </header>
@@ -172,16 +174,8 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h3 id="1、在电脑上能模拟器能打开程序，在真机上打开报错"><a href="#1、在电脑上能模拟器能打开程序，在真机上打开报错" class="headerlink" title="1、在电脑上能模拟器能打开程序，在真机上打开报错"></a>1、在电脑上能模拟器能打开程序，在真机上打开报错</h3><pre><code>《 No bundle URL present.
-Make sure you&apos;re running a packager server or have included a .jsbundle file in your application bundle. 》？
-进入Xcode--&gt;Product--&gt;Scheme--&gt;Edit Scheme --&gt;Run--&gt;Build Configuration--&gt;Debug  设置成Release即可
-选成release 可以打开，但是不是最新的样式  选择debug不能打开，是最新的样式
-原因：debug模式只可以在模拟器下使用，要在真机上测试必须使用release模式。生成最新样式，需要执行：
-npm run bundle-ios
-</code></pre><h3 id="2、-1-library-not-found-for-lRCTVideo"><a href="#2、-1-library-not-found-for-lRCTVideo" class="headerlink" title="2、:-1: library not found for -lRCTVideo"></a>2、:-1: library not found for -lRCTVideo</h3><pre><code>跟video有关系，video是0.0.9版本时不行，改为1.0.0版本，就可以了  
-</code></pre><h3 id="3、Xcode报错"><a href="#3、Xcode报错" class="headerlink" title="3、Xcode报错"></a>3、Xcode报错</h3><pre><code>Xcode报错误信息：No account for team &quot;HQNWRDCGWX&quot;. Add a new account in the Accounts preference pane or verify that your accounts have valid credentials. (in target &apos;eschool_physiqueTests&apos;)
-原因：项目中的teamID未修改。
-解决方法：搜索 HQNWRDCGWX 并修改为自己的ID
+                <h2 id="cropper-裁剪图片"><a href="#cropper-裁剪图片" class="headerlink" title="cropper 裁剪图片"></a>cropper 裁剪图片</h2><pre><code>可以裁剪二进制流的格式
+应该是涉及到跨域的问题，还没想好怎么解决
 </code></pre>
                 <hr>
                 
@@ -189,12 +183,12 @@ npm run bundle-ios
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2018/11/29/vue全选/" data-toggle="tooltip" data-placement="top" title="vue全选">&larr; Previous Post</a>
+                        <a href="/2018/12/06/cnzz统计原理解析/" data-toggle="tooltip" data-placement="top" title="cnzz统计原理解析">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2018/11/18/跟着木易杨进阶/" data-toggle="tooltip" data-placement="top" title="跟着木易杨学习高级前端">Next Post &rarr;</a>
+                        <a href="/2018/11/30/vue和angular防抖/" data-toggle="tooltip" data-placement="top" title="vue和angular防抖">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -213,7 +207,7 @@ npm run bundle-ios
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、在电脑上能模拟器能打开程序，在真机上打开报错"><span class="toc-text">1、在电脑上能模拟器能打开程序，在真机上打开报错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、-1-library-not-found-for-lRCTVideo"><span class="toc-text">2、:-1: library not found for -lRCTVideo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Xcode报错"><span class="toc-text">3、Xcode报错</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cropper-裁剪图片"><span class="toc-text">cropper 裁剪图片</span></a></li></ol>
                 </div>
             </div>
         </div>

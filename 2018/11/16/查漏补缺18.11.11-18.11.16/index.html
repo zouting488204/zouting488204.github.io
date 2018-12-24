@@ -77,6 +77,14 @@
                     </li>
 					
                     
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
 					
 					
                 </ul>
@@ -175,10 +183,13 @@ b、:class 根据不同的值来变化，定义一个方法，返回不同的cla
       return &quot;row_&quot;+index
     }
   }
+c、:class=&quot;{active:searchConditon === true}&quot;
+d、:class=&quot;searchConditon == true?&apos;active&apos;:&apos;&apos;&quot;&gt;
 </code></pre><h3 id="3、公用头部组件在App-vue中使用，在特定页面隐藏"><a href="#3、公用头部组件在App-vue中使用，在特定页面隐藏" class="headerlink" title="3、公用头部组件在App.vue中使用，在特定页面隐藏"></a>3、公用头部组件在App.vue中使用，在特定页面隐藏</h3><pre><code>v-if=&quot;$route.name !== &apos;login&apos;&quot;  
 使用$route.name 来进行判断
-缺点：公用组件会先显示，再隐藏，用户体验不好，还在找其他的方法
-</code></pre><h3 id="4-vue中设置跨域的一些注意事项（自己工作中碰到的）"><a href="#4-vue中设置跨域的一些注意事项（自己工作中碰到的）" class="headerlink" title="4 vue中设置跨域的一些注意事项（自己工作中碰到的）"></a>4 vue中设置跨域的一些注意事项（自己工作中碰到的）</h3>
+缺点：公用组件会先显示，再隐藏，会闪动，用户体验不好。解决方法：登录组件不使用懒加载，就不会闪动了
+</code></pre><h3 id="4-vue中设置跨域的一些注意事项（自己工作中碰到的）"><a href="#4-vue中设置跨域的一些注意事项（自己工作中碰到的）" class="headerlink" title="4 vue中设置跨域的一些注意事项（自己工作中碰到的）"></a>4 vue中设置跨域的一些注意事项（自己工作中碰到的）</h3><h3 id="5、搜索框的防抖动函数"><a href="#5、搜索框的防抖动函数" class="headerlink" title="5、搜索框的防抖动函数"></a>5、搜索框的防抖动函数</h3><h3 id="6、懒加载造成的白屏问题-angular"><a href="#6、懒加载造成的白屏问题-angular" class="headerlink" title="6、懒加载造成的白屏问题,angular"></a>6、懒加载造成的白屏问题,angular</h3><h3 id="7、图片下面使用div，会有一块空白的，图片vertical-align-middle-就没有了，为什么？"><a href="#7、图片下面使用div，会有一块空白的，图片vertical-align-middle-就没有了，为什么？" class="headerlink" title="7、图片下面使用div，会有一块空白的，图片vertical-align: middle;就没有了，为什么？"></a>7、图片下面使用div，会有一块空白的，图片vertical-align: middle;就没有了，为什么？</h3><h3 id="8、setTimeout倒计时，在浏览器页面打开久了，从其他页面过来，就会在2个时间之间来回跳"><a href="#8、setTimeout倒计时，在浏览器页面打开久了，从其他页面过来，就会在2个时间之间来回跳" class="headerlink" title="8、setTimeout倒计时，在浏览器页面打开久了，从其他页面过来，就会在2个时间之间来回跳"></a>8、setTimeout倒计时，在浏览器页面打开久了，从其他页面过来，就会在2个时间之间来回跳</h3><h3 id="9、兄弟组件传值"><a href="#9、兄弟组件传值" class="headerlink" title="9、兄弟组件传值"></a>9、兄弟组件传值</h3><h3 id="10、router传参数的几种方式"><a href="#10、router传参数的几种方式" class="headerlink" title="10、router传参数的几种方式"></a>10、router传参数的几种方式</h3><h3 id="11、vue打包后背景图片路径错误解决方案："><a href="#11、vue打包后背景图片路径错误解决方案：" class="headerlink" title="11、vue打包后背景图片路径错误解决方案："></a>11、vue打包后背景图片路径错误解决方案：</h3><pre><code>找到build/utils.js文件。搜索fallback: &apos;vue-style-loader&apos;,在这个选项后边添加publicPath:&apos;../../&apos; 即可
+</code></pre><h3 id="12、怎么复现手机上的bug："><a href="#12、怎么复现手机上的bug：" class="headerlink" title="12、怎么复现手机上的bug："></a>12、怎么复现手机上的bug：</h3>
                 <hr>
                 
 
@@ -209,7 +220,7 @@ b、:class 根据不同的值来变化，定义一个方法，返回不同的cla
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、去掉小程序button控件灰色边框"><span class="toc-text">1、去掉小程序button控件灰色边框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、-vue中-class的几种使用方式"><span class="toc-text">2、 vue中:class的几种使用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、公用头部组件在App-vue中使用，在特定页面隐藏"><span class="toc-text">3、公用头部组件在App.vue中使用，在特定页面隐藏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-vue中设置跨域的一些注意事项（自己工作中碰到的）"><span class="toc-text">4 vue中设置跨域的一些注意事项（自己工作中碰到的）</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、去掉小程序button控件灰色边框"><span class="toc-text">1、去掉小程序button控件灰色边框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、-vue中-class的几种使用方式"><span class="toc-text">2、 vue中:class的几种使用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、公用头部组件在App-vue中使用，在特定页面隐藏"><span class="toc-text">3、公用头部组件在App.vue中使用，在特定页面隐藏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-vue中设置跨域的一些注意事项（自己工作中碰到的）"><span class="toc-text">4 vue中设置跨域的一些注意事项（自己工作中碰到的）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、搜索框的防抖动函数"><span class="toc-text">5、搜索框的防抖动函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、懒加载造成的白屏问题-angular"><span class="toc-text">6、懒加载造成的白屏问题,angular</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、图片下面使用div，会有一块空白的，图片vertical-align-middle-就没有了，为什么？"><span class="toc-text">7、图片下面使用div，会有一块空白的，图片vertical-align: middle;就没有了，为什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、setTimeout倒计时，在浏览器页面打开久了，从其他页面过来，就会在2个时间之间来回跳"><span class="toc-text">8、setTimeout倒计时，在浏览器页面打开久了，从其他页面过来，就会在2个时间之间来回跳</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、兄弟组件传值"><span class="toc-text">9、兄弟组件传值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、router传参数的几种方式"><span class="toc-text">10、router传参数的几种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、vue打包后背景图片路径错误解决方案："><span class="toc-text">11、vue打包后背景图片路径错误解决方案：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、怎么复现手机上的bug："><span class="toc-text">12、怎么复现手机上的bug：</span></a></li></ol>
                 </div>
             </div>
         </div>

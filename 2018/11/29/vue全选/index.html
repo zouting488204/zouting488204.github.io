@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        react-native｜undefined
+        vue全选｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2018/11/18/react-native/">
+    <link rel="canonical" href="http://yoursite.com/2018/11/29/vue全选/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -144,15 +144,17 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>react-native</h1>
+                    <h1>vue全选</h1>
                     
                     <span class="meta">
                          作者 ZouTing
                         <span>
-                          日期 2018-11-18
+                          日期 2018-11-29
                          </span>
                     </span>
                     <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#vue" title="vue">vue</a>
                         
                     </div>
                 </div>
@@ -161,7 +163,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            react-native
+            vue全选
         </span>
     </div>
 </header>
@@ -172,29 +174,20 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h3 id="1、在电脑上能模拟器能打开程序，在真机上打开报错"><a href="#1、在电脑上能模拟器能打开程序，在真机上打开报错" class="headerlink" title="1、在电脑上能模拟器能打开程序，在真机上打开报错"></a>1、在电脑上能模拟器能打开程序，在真机上打开报错</h3><pre><code>《 No bundle URL present.
-Make sure you&apos;re running a packager server or have included a .jsbundle file in your application bundle. 》？
-进入Xcode--&gt;Product--&gt;Scheme--&gt;Edit Scheme --&gt;Run--&gt;Build Configuration--&gt;Debug  设置成Release即可
-选成release 可以打开，但是不是最新的样式  选择debug不能打开，是最新的样式
-原因：debug模式只可以在模拟器下使用，要在真机上测试必须使用release模式。生成最新样式，需要执行：
-npm run bundle-ios
-</code></pre><h3 id="2、-1-library-not-found-for-lRCTVideo"><a href="#2、-1-library-not-found-for-lRCTVideo" class="headerlink" title="2、:-1: library not found for -lRCTVideo"></a>2、:-1: library not found for -lRCTVideo</h3><pre><code>跟video有关系，video是0.0.9版本时不行，改为1.0.0版本，就可以了  
-</code></pre><h3 id="3、Xcode报错"><a href="#3、Xcode报错" class="headerlink" title="3、Xcode报错"></a>3、Xcode报错</h3><pre><code>Xcode报错误信息：No account for team &quot;HQNWRDCGWX&quot;. Add a new account in the Accounts preference pane or verify that your accounts have valid credentials. (in target &apos;eschool_physiqueTests&apos;)
-原因：项目中的teamID未修改。
-解决方法：搜索 HQNWRDCGWX 并修改为自己的ID
-</code></pre>
+                <h2 id="vue单选和全选"><a href="#vue单选和全选" class="headerlink" title="vue单选和全选"></a>vue单选和全选</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;vue单选和全选&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      *&#123;padding:0;margin:0&#125;</span><br><span class="line">      ul li&#123;list-style: none;&#125;</span><br><span class="line">      <span class="comment">#app&#123;width: 200px;margin:80px auto;&#125;</span></span><br><span class="line">      <span class="comment">#app input&#123; margin-right: 20px;width: 30px;height: 30px;vertical-align: middle&#125;</span></span><br><span class="line">      <span class="comment">#app li&#123;height: 30px;line-height: 30px;&#125;</span></span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">      &lt;div class=<span class="string">"check-all"</span>&gt;</span><br><span class="line">        &lt;input <span class="built_in">type</span>=<span class="string">"checkbox"</span> @change=<span class="string">"checkedAll(<span class="variable">$event</span>)"</span> v-model=<span class="string">"isCheckedAll"</span>&gt;全选</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &lt;li v-for=<span class="string">"(item,index) in lis"</span>&gt;</span><br><span class="line">            &lt;input <span class="built_in">type</span>=<span class="string">"checkbox"</span> :value=<span class="string">"item"</span> v-model=<span class="string">"checklist"</span>&gt;</span><br><span class="line">            &#123;&#123;item.value&#125;&#125;</span><br><span class="line">          &lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">  &lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">  var app = new Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">          checklist:[],</span><br><span class="line">          isCheckedAll:<span class="literal">false</span>,</span><br><span class="line">          CheckedAll:[],</span><br><span class="line">          lis:[&#123;id:1,value:<span class="string">'读书'</span>&#125;,&#123;id:2,value:<span class="string">'写字'</span>&#125;,&#123;id:3,value:<span class="string">'打羽毛球'</span>&#125;,&#123;id:4,value:<span class="string">'爬山'</span>&#125;]</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">          <span class="function"><span class="title">checkedAll</span></span> () &#123;</span><br><span class="line">            <span class="keyword">if</span> (!this.isCheckedAll) &#123;</span><br><span class="line">              this.checklist = []</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              this.checklist = this.lis</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">        watch: &#123;</span><br><span class="line">          <span class="string">'checklist'</span>: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">            <span class="keyword">if</span> (this.lis.length &gt; 0 &amp;&amp; this.checklist.length === this.lis.length) &#123;</span><br><span class="line">              this.isCheckedAll = <span class="literal">true</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              this.isCheckedAll = <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
                 <hr>
                 
 
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2018/11/29/vue全选/" data-toggle="tooltip" data-placement="top" title="vue全选">&larr; Previous Post</a>
+                        <a href="/2018/11/30/获取url中？符后的字串/" data-toggle="tooltip" data-placement="top" title="获取url中？符后的字串">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2018/11/18/跟着木易杨进阶/" data-toggle="tooltip" data-placement="top" title="跟着木易杨学习高级前端">Next Post &rarr;</a>
+                        <a href="/2018/11/18/react-native/" data-toggle="tooltip" data-placement="top" title="react-native">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -213,7 +206,7 @@ npm run bundle-ios
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、在电脑上能模拟器能打开程序，在真机上打开报错"><span class="toc-text">1、在电脑上能模拟器能打开程序，在真机上打开报错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、-1-library-not-found-for-lRCTVideo"><span class="toc-text">2、:-1: library not found for -lRCTVideo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Xcode报错"><span class="toc-text">3、Xcode报错</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue单选和全选"><span class="toc-text">vue单选和全选</span></a></li></ol>
                 </div>
             </div>
         </div>
